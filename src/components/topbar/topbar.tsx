@@ -16,19 +16,18 @@ const TopBar = styled.div`
 `;
 
 const NavBar = styled.div`
-    background-color: blue;
     display: flex;
     flex-direction: row;
-    width: 300px;
-    min-width: 300px;
+    width: 350px;
+    min-width: 350px;
 `;
 
 const RightSide = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 300px;
-    min-width: 300px;
+    width: 350px;
+    min-width: 350px;
 `;
 
 const MainLogo = styled.div`

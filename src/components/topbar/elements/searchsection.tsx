@@ -1,20 +1,58 @@
+import { Input, InputBase, TextField } from '@material-ui/core';
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Icon from '../../shared/Icon';
 
 const SearchSection = styled.div`
-    background-color: red;
     display: flex;
     width: 100%;
-    user-select: none;
+    margin-left: 200px;
+    margin-right: 200px;
 `;
 
-const searchSection : FC = () =>{
-    return(
+const SearchIcon = styled.div`
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+`;
+
+const SearchBar = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;    
+`;
+
+const CustomInput = styled(TextField)`
+    div{
+        height: 40px;
+    }
+`;
+
+const InputContainer = styled.div`
+    width: 90%;
+    position: relative;
+`;
+
+const searchSection: FC = () => {
+    return (
         <SearchSection>
-            <div className="serachBar"/>
-            <Icon icon="search"/>
+            <SearchBar>
+                <InputContainer >
+                    <div>
+                        <SearchIcon />
+                    </div>
+                    <CustomInput type="text" fullWidth variant="outlined" />
+                    <SearchIcon><Icon icon="search" width="22" height="22" /></SearchIcon>
+                </InputContainer>
+            </SearchBar>
+
+            
+
         </SearchSection>
     )
 }

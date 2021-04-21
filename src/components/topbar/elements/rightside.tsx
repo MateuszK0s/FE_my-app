@@ -6,11 +6,11 @@ import Icon from '../../shared/Icon';
 const NotificationBar = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 30px;
 `;
 
 const NotificationIcon = styled.div`
-    padding-left: 20px;
+    padding-left: 35px;
 `;
 
 const homeMenu : FC = () =>{
