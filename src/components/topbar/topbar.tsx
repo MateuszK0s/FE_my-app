@@ -6,7 +6,7 @@ import HomeMenu from './elements/homemenu';
 import NotificationBar from './elements/rightside';
 import SearchSection from './elements/searchsection';
 
-const TopBar = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     height: 60px;
@@ -34,9 +34,9 @@ const MainLogo = styled.div`
     margin: 7px;
 `;
 
-const topBar = () => {
+const TopBar = () => {
     return (
-        <TopBar>
+        <Container>
             <NavBar>
                 <MainLogo><img src="/icons/atom.png" height="46"/></MainLogo>                      
                 <HomeMenu/>                             
@@ -47,8 +47,8 @@ const topBar = () => {
             <RightSide>
                 <NotificationBar/>
             </RightSide>            
-        </TopBar>
+        </Container>
     )
 }
-export default topBar;
+export default TopBar;
 
