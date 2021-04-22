@@ -1,3 +1,4 @@
+import classes from '*.module.css';
 import { Input, InputBase, TextField } from '@material-ui/core';
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom';
@@ -29,8 +30,9 @@ const SearchBar = styled.div`
 
 const CustomInput = styled(TextField)`
     div{
-        height: 40px;
-    }
+        height: 40px;       
+        align-items: center;
+    }          
 `;
 
 const InputContainer = styled.div`
@@ -46,7 +48,7 @@ const searchSection: FC = () => {
                     <div>
                         <SearchIcon />
                     </div>
-                    <CustomInput type="text" fullWidth variant="outlined" />
+                    <CustomInput type="text" fullWidth variant="outlined" placeholder="Search Legalcluster"/>
                     <SearchIcon><Icon icon="search" width="22" height="22" /></SearchIcon>
                 </InputContainer>
             </SearchBar>
