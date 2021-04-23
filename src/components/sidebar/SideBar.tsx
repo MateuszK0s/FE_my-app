@@ -10,7 +10,7 @@ const Container = styled.div`
     width: 400px;
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `;
 
 const SideBar = () => {

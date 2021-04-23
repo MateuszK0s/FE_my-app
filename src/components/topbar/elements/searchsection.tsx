@@ -49,7 +49,7 @@ const searchSection: FC = () => {
                         <SearchIcon />
                     </div>
                     <CustomInput type="text" fullWidth variant="outlined" placeholder="Search Legalcluster"/>
-                    <SearchIcon><Icon icon="search" width="22" height="22" /></SearchIcon>
+                    <SearchIcon><img src="/icons/search.svg" width="22" height="22" /></SearchIcon>
                 </InputContainer>
             </SearchBar>
 

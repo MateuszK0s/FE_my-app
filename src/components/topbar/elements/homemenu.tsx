@@ -7,13 +7,20 @@ import useDropdown from 'react-dropdown-hook';
 const HomeMenu = styled.div`
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 20px;
+`;
+
+const TempText = styled.div`
+    padding-left: 15px;
+    font-size: 22px;
+    font-weight: 600;
 `;
 
 const homeMenu : FC = () =>{
     return(
         <HomeMenu>
-            <Icon icon="house2" width="28" height="28"/>
+            <img src="/icons/house2.svg" width="32" height="32"/>
+            <TempText>Home</TempText>
         </HomeMenu>
     )
 }

@@ -4,7 +4,7 @@ import styled from "styled-components";
 type IconName = "administration" | "arrow-down" | "bell" | "cog" | "comments" |
 "ecosystem" | "entities" | "entities2" | "house" | "house2" | "logo" |
 "logout" | "network" | "people" | "atom" | "plus" | "privacy" | "publications" | "search" |
-"settings" | "user-plus";
+"settings" | "user-plus" | "dembele";
 
 const Container = styled.div`
 

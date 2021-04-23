@@ -16,9 +16,9 @@ const NotificationIcon = styled.div`
 const homeMenu : FC = () =>{
     return(
         <NotificationBar>
-            <NotificationIcon><Icon icon="house" height="30"/></NotificationIcon>
-            <NotificationIcon><Icon icon="comments" height="30"/></NotificationIcon>
-            <NotificationIcon><Icon icon="bell" height="30"/></NotificationIcon>
+            <NotificationIcon><img src="/icons/house.svg" height="30"/></NotificationIcon>
+            <NotificationIcon><img src="/icons/comments.svg" height="30"/></NotificationIcon>
+            <NotificationIcon><img src="/icons/bell.svg" height="30"/></NotificationIcon>
         </NotificationBar>
     )
 }

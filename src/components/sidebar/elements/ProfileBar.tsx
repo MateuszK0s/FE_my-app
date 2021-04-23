@@ -6,7 +6,7 @@ import Icon from '../../shared/Icon';
 const Container = styled.div`
     margin: 30px;
     background-color:white;
-    width: 100vh;
+    width: 352px;
     height: 350px;  
     border-radius: 2.9%;
     border: 1px solid white;  
@@ -18,9 +18,23 @@ const ProfileSection= styled.div`
     width: 100%;
 `;
 
-const ProfilePicture = styled.div`
+const PictureSection = styled.div`
     height: 58%;
     width: 100%;
+`;
+
+const ProfilePicture = styled.div`
+    img{
+        height: 99px;
+        width: 99px;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    display:flex;   
+    align-items: center; 
+    height: 100%;
 `;
 
 const ProfileName = styled.div`
@@ -45,17 +59,49 @@ const ProfileDescription = styled.div`
 
 const YourSection = styled.div`
     height: 36%;
-    background-color: #e7e7e7;
     width: 100%;
+`;
+
+const YourSectionIcon = styled.div`
+    height: 100%;
+    width: 15%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const YourSectionName = styled.div`
+    height: 100%;
+    width: 65%;
+    float: left;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    padding-left: 1%;
+`;
+
+const YourSectionButton = styled.div`
+    height: 95%;
+    float: left;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
 `;
 
 const NetworkSection = styled.div`
     height: 50%;
     width: 100%;
-    background-color: white;
+    background-color: white;    
 `;
 
-const PublicationsSection = styled.div``;
+const PublicationsSection = styled.div`
+    height: 50%;
+    width: 100%;
+    background-color: white;   
+`;
 
 
 const ProfileBar = () => {
@@ -64,10 +110,14 @@ const ProfileBar = () => {
 
             <ProfileSection>
 
-                <ProfilePicture/>
+                <PictureSection>
+                    <ProfilePicture>
+                        <img src="/icons/dembele.png" height="90px"/>
+                    </ProfilePicture>
+                </PictureSection>
                 
                 <ProfileName>
-                    Humberta Swift
+                    Ousmane Swift
                 </ProfileName>
 
                 <ProfileDescription>
@@ -78,9 +128,37 @@ const ProfileBar = () => {
 
             <YourSection>
 
-                <NetworkSection/>
+                <NetworkSection>
 
-                <PublicationsSection/>
+                    <YourSectionIcon>
+                        <img src="/icons/network.png" height="50%"/>
+                    </YourSectionIcon>
+
+                    <YourSectionName>
+                        Your network
+                    </YourSectionName>
+
+                    <YourSectionButton>
+                        <img src="/icons/user-plus.svg" height="30%"/>
+                    </YourSectionButton>
+
+                </NetworkSection>
+                    
+                <PublicationsSection>
+
+                    <YourSectionIcon>
+                        <img src="/icons/publications.svg" height="50%"/>
+                    </YourSectionIcon>
+
+                    <YourSectionName>
+                        Your Publications
+                    </YourSectionName>
+
+                    <YourSectionButton>
+                        <img src="/icons/plus.png" height="30%"/>
+                    </YourSectionButton>
+
+                </PublicationsSection>
 
             </YourSection>
         
