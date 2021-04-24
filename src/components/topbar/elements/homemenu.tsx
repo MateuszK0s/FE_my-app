@@ -16,6 +16,7 @@ const TempText = styled.div`
     font-weight: 600;
 `;
 
+
 const homeMenu : FC = () =>{
     return(
         <HomeMenu>

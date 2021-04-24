@@ -5,7 +5,6 @@ import Icon from '../shared/Icon';
 import SideMenu from './elements/SideMenu';
 import ProfileBar from './elements/ProfileBar';
 
-
 const Container = styled.div`
     width: 400px;
     height: 100vh;

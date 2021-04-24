@@ -32,7 +32,7 @@ const CustomInput = styled(TextField)`
     div{
         height: 40px;       
         align-items: center;
-    }          
+    }     
 `;
 
 const InputContainer = styled.div`
@@ -43,17 +43,22 @@ const InputContainer = styled.div`
 const searchSection: FC = () => {
     return (
         <SearchSection>
+            
             <SearchBar>
+
                 <InputContainer >
+
                     <div>
                         <SearchIcon />
                     </div>
-                    <CustomInput type="text" fullWidth variant="outlined" placeholder="Search Legalcluster"/>
-                    <SearchIcon><img src="/icons/search.svg" width="22" height="22" /></SearchIcon>
-                </InputContainer>
-            </SearchBar>
 
-            
+                    <CustomInput type="text" fullWidth variant="outlined" placeholder="Search Legalcluster"/>
+
+                    <SearchIcon><img src="/icons/search.svg" width="22" height="22" /></SearchIcon>
+
+                </InputContainer>
+
+            </SearchBar>           
 
         </SearchSection>
     )
