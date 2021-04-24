@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import PublicationRightSide from './PublicationRightSide';
+import PublicationRightSide from './elements/PublicationRightSide';
+import Workspaces from './Workspaces';
+
 
 const Container = styled.div`
     background-color:white;
@@ -14,7 +16,7 @@ const Container = styled.div`
 const LeftSide = styled.div`
     float:left;
     background-color: #4b5268;
-    width: 33%;
+    width: 450px;
     height: 100%;
     border-radius: 1.5% 0% 0% 1.5%;
     img{
@@ -32,6 +34,8 @@ const MainPublication = () => {
             <LeftSide><img src="/images/mpublication.jpg"/></LeftSide>
 
             <PublicationRightSide/>
+
+            <Workspaces/>
 
         </Container>
     )  

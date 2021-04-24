@@ -44,6 +44,7 @@ const BottomImage = styled.div`
     flex-direction: row;
     height: 100%;
     align-items: center;
+    margin: 0 7px;
     img{
         max-height: 100%;
         max-width: 100%;
@@ -51,7 +52,6 @@ const BottomImage = styled.div`
         margin-left: auto;
         margin-right: auto;
     }
-    margin: 0 7px;
 `;
 
 const BottomName = styled.div`

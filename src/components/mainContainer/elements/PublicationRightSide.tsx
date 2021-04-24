@@ -6,7 +6,7 @@ import PublicationBar from './RightSideElements/PublicationBar'
 
 const Container = styled.div`
     float: left;
-    width: 67%;
+    width: calc(100% - 450px);
     height: 100%;
     border-radius: 0% 1.5% 1.5% 0%;
 `;
@@ -41,7 +41,7 @@ const PublicationRightSide = () => {
             <PublicationBar/>
 
             <PublicationBar/>
-            
+
             <PublicationBar/>
 
             <BottomBar>See more publications</BottomBar>
