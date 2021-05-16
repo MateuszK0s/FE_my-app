@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Icon from '../shared/Icon';
+import { ExpandedMenu } from './elements/ExpendedMenu';
 import HomeMenu from './elements/homemenu';
 import NotificationBar from './elements/rightside';
 import SearchSection from './elements/searchsection';
+import useDropdown from 'react-dropdown-hook';
 
 const Container = styled.div`
     display: flex;
@@ -34,12 +36,56 @@ const MainLogo = styled.div`
     margin: 7px;
 `;
 
+const LeftSide = styled.div `
+    align-items:center;
+    display: inline-flexbox;
+    justify-content: center;
+    margin: 10px;
+    padding: 4px;
+    img{
+        margin-left: 40px;
+    }
+`;
+
+const TempBox = styled.div`
+    margin-left: 50px;
+`;
+
+const MenuWrapper = styled.div `
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 40px;
+    width: 100%;
+`;
+
 const TopBar = () => {
+
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+    const menuHandler = () => {
+        toggleDropdown();
+    }
     return (
         <Container>
             <NavBar>
                 <MainLogo><img src="/icons/atom.png" height="46"/></MainLogo>                      
-                <HomeMenu/>                             
+                <MenuWrapper ref={wrapperRef}>
+
+                        <LeftSide onClick={menuHandler}>
+
+                            <img src="icons/house2.png" alt="" />
+
+                            <TempBox>
+                                <span> Home </span>
+                                <img src="icons/arrow-down.png" alt="" />
+                            </TempBox>
+
+                       </LeftSide>
+
+                       {dropdownOpen &&
+                            <ExpandedMenu />
+                       }
+                   </MenuWrapper>                            
             </NavBar>
 
             <SearchSection/>
@@ -51,4 +97,3 @@ const TopBar = () => {
     )
 }
 export default TopBar;
-

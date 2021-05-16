@@ -6,7 +6,7 @@ import Icon from '../../shared/Icon';
 const NotificationBar = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    padding-right: 30px;
 `;
 
 const NotificationIcon = styled.div`

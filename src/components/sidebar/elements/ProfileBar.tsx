@@ -117,7 +117,7 @@ const ProfileBar = () => {
                 </PictureSection>
                 
                 <ProfileName>
-                    Ousmane Swift
+                    Humberta Swift
                 </ProfileName>
 
                 <ProfileDescription>

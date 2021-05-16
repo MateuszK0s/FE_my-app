@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import PublicationRightSide from './elements/PublicationRightSide';
+import ResumeContainer from './ResumeContainer';
 import Workspaces from './Workspaces';
 
 
@@ -36,6 +37,8 @@ const MainPublication = () => {
             <PublicationRightSide/>
 
             <Workspaces/>
+
+            <ResumeContainer/>
 
         </Container>
     )  
