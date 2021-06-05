@@ -7,6 +7,7 @@ import MainContainer from './components/mainContainer/MainContainer';
 import styled from 'styled-components';
 import { setUsers } from './features/usersSlice';
 import { useDispatch } from 'react-redux';
+import { setPosts } from './features/postsSlice';
 
 const Container = styled.div`
   display: flex;
@@ -19,10 +20,14 @@ function App() {
 
   useEffect(()=> {
     const initApp = async () =>{
-      fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
+      fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
         .then(data => {
             dispatch(setUsers(data))
         });        
+        fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
+        .then(data => {
+            dispatch(setPosts(data))
+        });    
     }
     initApp();
   },[])
