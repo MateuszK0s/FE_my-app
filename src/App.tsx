@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { setUsers } from './features/usersSlice';
 import { useDispatch } from 'react-redux';
 import { setPosts } from './features/postsSlice';
+import { setComments } from './features/commentsSlice';
 
 const Container = styled.div`
   display: flex;
@@ -23,11 +24,17 @@ function App() {
       fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
         .then(data => {
             dispatch(setUsers(data))
-        });        
+        });
+
         fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
         .then(data => {
             dispatch(setPosts(data))
         });    
+
+        fetch("https://jsonplaceholder.typicode.com/comments").then(response => response.json())
+        .then(data => {
+            dispatch(setComments(data))
+        });   
     }
     initApp();
   },[])
