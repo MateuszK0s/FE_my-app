@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Icon from '../shared/Icon';
@@ -28,13 +28,22 @@ const ResumeBottom = styled.div`
     height: calc(100% - 76px);
 `;
 
+export interface IPost {
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+}
+
 const ResumeContainer = () => {
     return(
         <Container>
 
                 <ResumeTopBar>Resume your work</ResumeTopBar>
 
-                <ResumeBottom/>
+                <ResumeBottom>
+                    
+                </ResumeBottom>
 
         </Container>
     )  

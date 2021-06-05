@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './index.css';
 import TopBar from './components/topbar/topbar'
 import SideBar from './components/sidebar/SideBar'
 import MainContainer from './components/mainContainer/MainContainer';
 import styled from 'styled-components';
+import { setUsers } from './features/usersSlice';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +14,20 @@ const Container = styled.div`
 `;
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=> {
+    const initApp = async () =>{
+      fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
+        .then(data => {
+            dispatch(setUsers(data))
+        });        
+    }
+    initApp();
+  },[])
+
+
   return (    
 
     <div className="App">
