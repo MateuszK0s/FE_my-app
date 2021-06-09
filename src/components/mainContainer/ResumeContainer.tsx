@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Icon from '../shared/Icon';
+import ResumeComments from './ResumeComments';
 
 const Container = styled.div`
     height: 500px;
@@ -22,6 +23,11 @@ const ResumeTopBar = styled.div`
 `;
 
 const ResumeBottom = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+const Comments = styled.div`
     border-radius: 1.5%;
     background-color: white;
     width: 100%;
@@ -42,6 +48,8 @@ const ResumeContainer = () => {
                 <ResumeTopBar>Resume your work</ResumeTopBar>
 
                 <ResumeBottom>
+
+                    <ResumeComments/>
                     
                 </ResumeBottom>
 

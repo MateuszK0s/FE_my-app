@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setPosts } from './features/postsSlice';
 import { setComments } from './features/commentsSlice';
 import { setPhotos } from './features/photosSlice';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -49,17 +50,25 @@ function App() {
   return (    
 
     <div className="App">
+      <Router>
+        <TopBar/>
 
-      <TopBar/>
+        <Container>
 
-      <Container>
+          <SideBar/>
 
-        <SideBar/>
+            <Switch>
 
-        <MainContainer/>
+              <Route path="" exact>
 
-      </Container>
-      
+                <MainContainer/>
+
+              </Route>
+              
+            </Switch>
+
+        </Container>
+      </Router>
     </div>
   );
 }

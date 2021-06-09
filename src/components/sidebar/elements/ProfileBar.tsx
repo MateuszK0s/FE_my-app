@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Colors } from '../../../styledHelpers/Colors';
 import Icon from '../../shared/Icon';
 
 const Container = styled.div`
@@ -103,6 +105,10 @@ const PublicationsSection = styled.div`
     background-color: white;   
 `;
 
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.owngray};
+`;
 
 const ProfileBar = () => {
     return(

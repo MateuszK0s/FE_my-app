@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div `
@@ -108,22 +108,30 @@ const Scroll = styled.div `
 `;
 
 export const ExpandedMenu: FC = () => {
+
+    const [inputText, setInputText] = useState<string>('');
+
+    const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        const text = e.target.value;
+        setInputText(text);
+    }
+
     return(
         <Wrapper>
             <Wrapper2>
                 <Menu>
                     <InputWrapper>
-                        <CustomInput placeholder="Filter...." type="text" />
+                        <CustomInput placeholder="Filter...." value={inputText} onChange={inputHandler} type="text" />
                     </InputWrapper>
                     <MenuList>
                     <Scroll>
                     <span>Platform</span>
                         <PlatformItem>
-                            <li><CustomImg src="icons/house2.svg" alt=""></CustomImg>Home</li>
-                            <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Publications</li>
-                            <li><CustomImg src="icons/people.png" alt=""></CustomImg>People</li>
-                            <li><CustomImg src="icons/entities.png" alt=""></CustomImg>Entities</li>
-                            <li><CustomImg src="icons/administration.png" alt=""></CustomImg>Administration</li>
+                            {'Home'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/house2.svg" alt=""></CustomImg>Home</li>}
+                            {'Publications'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Publications</li>}
+                            {'People'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/people.png" alt=""></CustomImg>People</li>}
+                            {'Entities'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities.png" alt=""></CustomImg>Entities</li>}
+                            {'Administration'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/administration.png" alt=""></CustomImg>Administration</li>}
                         </PlatformItem>
                         <span>Workspaces</span>
                         <WorkspacesItem>

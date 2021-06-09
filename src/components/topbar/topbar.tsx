@@ -7,6 +7,8 @@ import HomeMenu from './elements/homemenu';
 import NotificationBar from './elements/rightside';
 import SearchSection from './elements/searchsection';
 import useDropdown from 'react-dropdown-hook';
+import { Colors } from '../../styledHelpers/Colors';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -59,6 +61,11 @@ const MenuWrapper = styled.div `
     width: 100%;
 `;
 
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.owngray};
+`;
+
 const TopBar = () => {
 
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
@@ -68,7 +75,7 @@ const TopBar = () => {
     return (
         <Container>
             <NavBar>
-                <MainLogo><img src="/icons/atom.png" height="46"/></MainLogo>                      
+                <MainLogo><CustomLink to="/"><img src="/icons/atom.png" height="46"/></CustomLink></MainLogo>                      
                 <MenuWrapper ref={wrapperRef}>
 
                         <LeftSide onClick={menuHandler}>
@@ -85,7 +92,7 @@ const TopBar = () => {
                        {dropdownOpen &&
                             <ExpandedMenu />
                        }
-                   </MenuWrapper>                            
+                   </MenuWrapper>                     
             </NavBar>
 
             <SearchSection/>

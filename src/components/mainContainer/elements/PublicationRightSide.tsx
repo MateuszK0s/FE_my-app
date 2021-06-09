@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Colors } from '../../../styledHelpers/Colors';
 import PublicationBar from './RightSideElements/PublicationBar'
 // import Colors from '../../../styledHelpers/Colors';
 
@@ -17,7 +19,7 @@ const TopBar = styled.div`
     font-size: 28px;
     font-weight: 600;
     width: calc(100% - 20px);
-    color: #4b5268;
+    color: ${Colors.owngray};
     display: flex;
     align-items: center;
     margin-left: 20px;
@@ -28,8 +30,12 @@ const BottomBar = styled.div`
     font-size: 21px;
     font-weight: 400;
     margin-left: 20px;
-    color: #5163af;
     margin-top: 15px;
+`;
+
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.ownblue};
 `;
 
 const PublicationRightSide = () => {
@@ -44,7 +50,7 @@ const PublicationRightSide = () => {
 
             <PublicationBar/>
 
-            <BottomBar>See more publications</BottomBar>
+            <BottomBar><CustomLink to="/publications">See more publications</CustomLink></BottomBar>
 
         </Container>
     )

@@ -27,6 +27,7 @@ const WorkspacesContainer = styled.div`
     background-color: white;
     width: 100%;
     height: calc(100% - 76px);
+    box-shadow: 10px 10px 10px #ECECEC;
 `;
 
 const Workspaces = () => {

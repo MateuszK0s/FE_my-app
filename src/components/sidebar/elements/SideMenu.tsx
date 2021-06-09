@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Colors } from '../../../styledHelpers/Colors';
 import Icon from '../../shared/Icon';
 
 const Container = styled.div`
@@ -8,6 +10,7 @@ const Container = styled.div`
     width: 352px;
     height: 210px;
     opacity: 70%;
+    color: ${Colors.owngray};
 `;
 
 const ItemBar = styled.div`
@@ -23,14 +26,19 @@ const ItemIcon = styled.div`
         padding-left: 5px;
     }
     display: flex;
-    align-items: center
+    align-items: center;
 `;
 
 const ItemName = styled.div`
     font-size: 22px;
     padding-left: 10px;
     display: flex;
-    align-items: center
+    align-items: center;
+`;
+
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.owngray};
 `;
 
 
@@ -38,20 +46,20 @@ const SideMenu = () => {
     return(
         <Container>
 
-            <ItemBar>
+        <CustomLink to="/publications"><ItemBar>
                 <ItemIcon><img src="/icons/publications.svg"/></ItemIcon>
                 <ItemName>Publications</ItemName>
-            </ItemBar>
+            </ItemBar></CustomLink>
 
-            <ItemBar>
+            <CustomLink to="/ecosystem"><ItemBar>
                 <ItemIcon><img src="/icons/ecosystem.svg"/></ItemIcon>
                 <ItemName>Ecosystem</ItemName>
-            </ItemBar>
+            </ItemBar></CustomLink>
 
-            <ItemBar>
+            <CustomLink to="/entities"><ItemBar>
                 <ItemIcon><img src="/icons/entities.svg"/></ItemIcon>
                 <ItemName>Entities</ItemName>
-            </ItemBar>
+            </ItemBar></CustomLink>
 
         </Container>
     )  
