@@ -1,110 +1,139 @@
 import { ChangeEvent, FC, useState } from 'react';
 import styled from 'styled-components';
+import { Colors } from '../../../styledHelpers/Colors';
 
 const Wrapper = styled.div `
     position: absolute;
-    top: 46px;
-    left: 300px;
+    top: 60px;
+    left: 140px;
     background: white;
     padding: 10px;
-    border: 1px solid;
-`;
-const Wrapper2 = styled.aside ` 
-    flex: 2;
-    margin-right: -23px;
+    border-radius: 2%;
+    border: 1px solid ${Colors.ownlgray};  
+    border-top: 0;
+    z-index: 10;
+    width: 250px;
 `;
 
 const Menu = styled.div `
     background: white;
-    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.07);
-    border-radius: 4px;
-    width: 90%;
-    margin-left: 5px;
-    margin-top: 5px;
+    width: 100%;
 `;
 
 const InputWrapper = styled.div `
-    width: 300px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    border-radius: 3px;
 `;
 
 const CustomInput = styled.input `
-    width: 90%;
-    border: 0px;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #e0dcdc;  
     text-align: left;
-    margin-bottom: 5px;
     &::placeholder{
-        color: #e0dcdc;
-        font-weight: bold;
+        color: ${Colors.owngray};
     }   
 `;
 
 const CustomImg = styled.img ` 
     margin-right: 15px;
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
 `;
 
 const MenuList = styled.ul ` 
-    padding: 16px;
+    padding: 0 16px;
+    list-style-type: none;
+    span{
+        color: #adacac;
+        font-weight: 700;
+    }
 `;
 
 const UserList = styled.ul `
-    padding: 16px;
+    padding: 0 16px;
+    list-style-type: none;
+    span{
+        color: #adacac;
+        font-weight: 700;
+    }
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
 `;
 
 const PlatformItem = styled.li`
     align-items:center;
-    margin-bottom: 8px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
 `;
 
 const WorkspacesItem = styled.li `
     align-items: center;
-    margin-bottom: 8px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
 `;
 
 const AccountItem = styled.li ` 
     align-items: center;
-    margin-bottom: 8px;
-    margin-top: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+`;
+
+const NameBox = styled.div`
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+`;
+
+const UserDiv = styled.div ` 
+    display: flex;
+    align-items: center;
 `;
 
 const UserImg = styled.img ` 
+    height: 38px;
+    width: 38px;
+    border: 0px solid white;
+    border-radius: 50%;
 `;
 
-const Name = styled.p `
+const RightSite = styled.div ` 
+    padding-left: 5px;
+    width: calc(100%-35px);
+`;
+
+const Name = styled.div `
     color: black;
-    text-transform: capitalize;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    font-size: 15px;
+    height: 55%;
+    width: 100%;
+    max-width: 100%;
 `;
 
-const Description = styled.p ` 
+const Description = styled.div ` 
     color: #5163af;
-    font-size: 12;
-    font-weight: 100;
-    margin-bottom: 5px;
+    height: 45%;
 `;
-
 
 const LogOutButton = styled.div ` 
-    margin-left: 25%;
     font-size: 16;
-    color: black;
-    cursor: pointer;
-    padding: 16px;
+    color: ${Colors.owngray};
+    padding: 10px 0 5px 0;
+    border-top: 1px solid ${Colors.ownlgray};
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
 `;
 
 const Scroll = styled.div `
     overflow: scroll;
+    overflow-x: hidden;
 `;
 
 export const ExpandedMenu: FC = () => {
@@ -118,13 +147,12 @@ export const ExpandedMenu: FC = () => {
 
     return(
         <Wrapper>
-            <Wrapper2>
                 <Menu>
                     <InputWrapper>
                         <CustomInput placeholder="Filter...." value={inputText} onChange={inputHandler} type="text" />
                     </InputWrapper>
-                    <MenuList>
                     <Scroll>
+                    <MenuList>
                     <span>Platform</span>
                         <PlatformItem>
                             {'Home'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/house2.svg" alt=""></CustomImg>Home</li>}
@@ -135,29 +163,35 @@ export const ExpandedMenu: FC = () => {
                         </PlatformItem>
                         <span>Workspaces</span>
                         <WorkspacesItem>
-                            <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Client contract</li>
-                            <li><CustomImg src="icons/cog.png" alt=""></CustomImg>Supplier contract</li>
-                            <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Corporate</li>
-                            <li><CustomImg src="icons/network.png" alt=""></CustomImg>Group Norms</li>
-                            <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Real estate contracts</li>    
+                            {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Client contract</li>}
+                            {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/cog.png" alt=""></CustomImg>Supplier contract</li>}
+                            {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Corporate</li>}
+                            {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/network.png" alt=""></CustomImg>Group Norms</li>}
+                            {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Real estate contracts</li>}
                         </WorkspacesItem>
-                        </Scroll>
+                        
                     </MenuList>
+                    </Scroll>
                     <UserList>
                     <span>Account</span>
                         <AccountItem>
-                            <UserImg />
-                        <Name>Humberta Swift</Name>
-                        <Description>See Profile</Description>
-                            <li><CustomImg src="icons/privacy.png" alt=""></CustomImg>Privacy</li>
-                            <li><CustomImg src="icons/settings.png" alt=""></CustomImg>Settings</li>
-                        </AccountItem>
-                    </UserList>
+                            <li>
+                                <NameBox>
+                                    <UserDiv><UserImg src="icons/dembele.png"/></UserDiv>
+                                    <RightSite>
+                                        <Name>Humberta Swift</Name>
+                                        {'See Profile'.toLowerCase().includes(inputText.toLowerCase()) && <Description>See Profile</Description>}
+                                    </RightSite>
+                                </NameBox>
+                            </li>                        
+                            {'Privacy'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/privacy.png" alt=""></CustomImg>Privacy</li>}
+                            {'Settings'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/settings.png" alt=""></CustomImg>Settings</li>}
+                        </AccountItem>                        
+                    </UserList>                    
                     <LogOutButton>
                         <CustomImg src="icons/logout.png" alt=""></CustomImg><span>Logout</span>
                     </LogOutButton>
                 </Menu>
-            </Wrapper2> 
         </Wrapper>
     );
 };

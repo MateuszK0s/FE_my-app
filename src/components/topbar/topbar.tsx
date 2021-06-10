@@ -80,18 +80,17 @@ const TopBar = () => {
 
                         <LeftSide onClick={menuHandler}>
 
-                            <img src="icons/house2.png" alt="" />
+                            <img src="icons/house2.svg" height="30px"/>
 
                             <TempBox>
                                 <span> Home </span>
-                                <img src="icons/arrow-down.png" alt="" />
-                            </TempBox>
+                                
+                                <img src="icons/arrow-down.svg" height="9px"/>                        
+                            </TempBox> 
 
                        </LeftSide>
-
-                       {dropdownOpen &&
-                            <ExpandedMenu />
-                       }
+                       {dropdownOpen && <ExpandedMenu/>}
+                       
                    </MenuWrapper>                     
             </NavBar>
 
