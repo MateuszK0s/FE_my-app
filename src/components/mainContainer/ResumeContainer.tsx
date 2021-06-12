@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Icon from '../shared/Icon';
 import ResumeComments from './ResumeComments';
 
 const Container = styled.div`

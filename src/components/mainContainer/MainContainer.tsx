@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Icon from '../shared/Icon';
 import MainPublication from './MainPublication'
 
 const Container = styled.div`
@@ -9,7 +6,7 @@ const Container = styled.div`
     margin-right: 110px;
     margin-left: 30px;
     height: 100vh;
-    width: 100%;
+    max-width: 1450px;
 `;
 
 const MainContainer = () => {

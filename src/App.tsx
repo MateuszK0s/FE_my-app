@@ -59,7 +59,7 @@ function App() {
 
             <Switch>
 
-              <Route path="" exact>
+              <Route path="/" exact>
 
                 <MainContainer/>
 

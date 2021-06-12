@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import PublicationRightSide from './elements/PublicationRightSide';
 import ResumeContainer from './ResumeContainer';

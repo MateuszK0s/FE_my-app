@@ -1,9 +1,7 @@
-import React, { FC } from 'react';
-import ReactDOM from 'react-dom';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Colors } from '../../../styledHelpers/Colors';
-import Icon from '../../shared/Icon';
 
 const NotificationBar = styled.div`
     display: flex;

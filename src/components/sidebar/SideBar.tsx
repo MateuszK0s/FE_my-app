@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Icon from '../shared/Icon';
 import SideMenu from './elements/SideMenu';
 import ProfileBar from './elements/ProfileBar';
 

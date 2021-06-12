@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
-import Icon from '../shared/Icon';
 
 const Container = styled.div`
     border-radius: 1.5%;

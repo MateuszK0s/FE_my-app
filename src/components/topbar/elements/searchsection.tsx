@@ -1,9 +1,6 @@
-import classes from '*.module.css';
-import { Input, InputBase, TextField } from '@material-ui/core';
-import React, { FC } from 'react';
-import ReactDOM from 'react-dom';
+import { TextField } from '@material-ui/core';
+import { FC } from 'react';
 import styled from 'styled-components';
-import Icon from '../../shared/Icon';
 
 const SearchSection = styled.div`
     display: flex;

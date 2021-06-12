@@ -1,9 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Icon from '../shared/Icon';
 import { ExpandedMenu } from './elements/ExpendedMenu';
-import HomeMenu from './elements/homemenu';
 import NotificationBar from './elements/rightside';
 import SearchSection from './elements/searchsection';
 import useDropdown from 'react-dropdown-hook';

@@ -1,9 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Colors } from '../../../styledHelpers/Colors';
-import Icon from '../../shared/Icon';
 
 const Container = styled.div`
     margin: 30px;
