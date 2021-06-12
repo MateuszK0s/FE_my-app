@@ -6,7 +6,7 @@ const Container = styled.div`
     margin-right: 110px;
     margin-left: 30px;
     height: 100vh;
-    max-width: 1450px;
+    max-width: 1435px;
 `;
 
 const MainContainer = () => {

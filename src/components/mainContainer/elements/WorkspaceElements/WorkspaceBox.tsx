@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IWorkspace } from '../../../../entities/IWorkspace';
 import { Colors } from '../../../../styledHelpers/Colors';
 
 const Container = styled.div`
@@ -77,7 +78,7 @@ const WorkspaceBottomUpdate = styled.div`
     padding-left: 15px;
 `;
 
-const WorkspaceBox = () => {
+function WorkspaceBox(props: IWorkspace){
     return (
         <Container>
 
@@ -86,8 +87,8 @@ const WorkspaceBox = () => {
 
             <WorkspaceMiddleSection>
 
-                <WorkspaceMidLeft><img src="" /> </WorkspaceMidLeft>
-                <WorkspaceMidRight>Client contract</WorkspaceMidRight>
+                <WorkspaceMidLeft><img src={props.icon}/></WorkspaceMidLeft>
+                <WorkspaceMidRight>{props.title}</WorkspaceMidRight>
 
             </WorkspaceMiddleSection>
 
@@ -95,17 +96,17 @@ const WorkspaceBox = () => {
 
                 <WorkspaceBottomTop>
 
-                    <WorkspaceBottomLeft><img src="/icons/people.svg" /> Contract </WorkspaceBottomLeft>•
-                    <WorkspaceBottomRight><img src="/icons/people.svg" /> 150 users</WorkspaceBottomRight>
+                    <WorkspaceBottomLeft><img src="/icons/people.svg" /> {props.type}</WorkspaceBottomLeft>•
+                    <WorkspaceBottomRight><img src="/icons/people.svg" /> {props.userNumber} users</WorkspaceBottomRight>
 
                 </WorkspaceBottomTop>
 
-                <WorkspaceBottomUpdate>Last update 2 days ago</WorkspaceBottomUpdate>
+                <WorkspaceBottomUpdate>Last update {props.update} ago</WorkspaceBottomUpdate>
 
             </WorkspaceBottomSection>
 
         </Container>
-    )
+    );
 }
 
 export default WorkspaceBox;
