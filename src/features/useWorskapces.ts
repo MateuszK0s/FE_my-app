@@ -21,7 +21,7 @@ export const useWorkspace = (id: number): Promise<IWorkspace|null> => {
 const staticData = [
     {
         id: 1,
-        bgimage: "",
+        bgimage: "/images/tworkspace.jpg",
         icon: "/icons/entities2.svg",
         title: "Client contract",
         type: "Contract",
@@ -31,7 +31,7 @@ const staticData = [
     },
     {
         id: 2,
-        bgimage: "",
+        bgimage: "/images/tworkspace.jpg",
         icon: "/icons/entities2.svg",
         title: "Supplier contract",
         type: "Contract",
@@ -41,7 +41,7 @@ const staticData = [
     },
     {
         id: 3,
-        bgimage: "",
+        bgimage: "/images/tworkspace2.jpg",
         icon: "/icons/entities2.svg",
         title: "Corporate",
         type: "Corporate",
@@ -51,7 +51,7 @@ const staticData = [
     },
     {
         id: 4,
-        bgimage: "",
+        bgimage: "/images/tworkspace2.jpg",
         icon: "/icons/entities2.svg",
         title: "Group Norms",
         type: "Norms",
@@ -61,7 +61,7 @@ const staticData = [
     },
     {
         id: 5,
-        bgimage: "",
+        bgimage: "/images/tworkspace.jpg",
         icon: "/icons/entities2.svg",
         title: "Real estate contracts",
         type: "Contract",

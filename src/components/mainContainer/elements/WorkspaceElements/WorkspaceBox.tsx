@@ -12,11 +12,18 @@ const Container = styled.div`
 `;
 
 const WorkspaceTopImg = styled.div`
-    background-image: url(/images/tworkspace.jpg);
     border-radius: 2% 2% 0 0;
     background-size: 350px;
     height: 38%;
     width: 100%;
+    overflow: hidden;
+`;
+
+const BgImage = styled.img`
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+    min-height: 114px;
 `;
 
 const WorkspaceMiddleSection = styled.div`
@@ -94,6 +101,7 @@ function WorkspaceBox(props: IWorkspaceBox) {
         <Container>
 
             <WorkspaceTopImg>
+                <BgImage src={props.Workspace.bgimage}/>
             </WorkspaceTopImg>
 
             <WorkspaceMiddleSection>
