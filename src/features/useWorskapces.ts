@@ -1,9 +1,7 @@
 import { IWorkspace } from "../entities/IWorkspace";
 
-export const useWorkspaces = (): Promise<IWorkspace[]> => {
-    return new Promise((resolve, reject) => {
-        resolve(staticData)
-    });
+export const useWorkspaces = (): IWorkspace[] => {
+    return staticData
 }
 
 export const useWorkspace = (id: number): Promise<IWorkspace|null> => {

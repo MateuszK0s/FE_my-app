@@ -25,32 +25,19 @@ const WorkspaceLink = styled(Link)`
 
 const Workspaces = () => {
 
-    const [items, setItems] = useState<IWorkspace[]>([]);
+    const items = useWorkspaces();
 
-    const workspaces = useWorkspaces();
-
-    useEffect(() =>{
-        workspaces.then(data=>{setItems(data)})
-        console.log("dsa");
-    },[workspaces])
     return (
         <ItemsContainer>
-            <CustomCarousel itemWidth={350} offset={16} plugins={[{
+                <CustomCarousel itemWidth={350} offset={16} plugins={[{
                 resolve: slidesToShowPlugin,
                 options: {
                     numberOfSlides: 5,
                 }
             }]}>
-                {/* <WorkspaceBox Workspace={}/>
                 {
-                   items.map((item: IWorkspace, index) => (
-                       <WorkspaceLink key={index} to={`/workspace/${item.id}`}>
-                           <WorkspaceItem workspace={item} />
-                       </WorkspaceLink>
-                   ))
-                } */}
-                <div></div>
-
+                    items.map((workspace => <WorkspaceBox Workspace={workspace}/>))
+                }
             </CustomCarousel>
         </ItemsContainer>
     );

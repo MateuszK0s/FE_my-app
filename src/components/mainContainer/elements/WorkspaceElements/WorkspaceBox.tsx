@@ -30,8 +30,15 @@ const WorkspaceMidLeft = styled.div`
     width: 32%;
     margin: -25px 0 0 15px;
     box-shadow: 2px 2px 2px 2px #ECECEC;
-    background-image: url(/icons/workspace.png);
     background-size: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    img{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 `;
 
 const WorkspaceMidRight = styled.div`
