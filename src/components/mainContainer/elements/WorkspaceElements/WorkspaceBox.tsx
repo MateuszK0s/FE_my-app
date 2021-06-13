@@ -78,7 +78,11 @@ const WorkspaceBottomUpdate = styled.div`
     padding-left: 15px;
 `;
 
-const WorkspaceBox = () => {
+interface IWorkspaceBox{
+    Workspace: IWorkspace;
+}
+
+function WorkspaceBox(props: IWorkspaceBox) {
     return (
         <Container>
 
@@ -87,8 +91,8 @@ const WorkspaceBox = () => {
 
             <WorkspaceMiddleSection>
 
-                <WorkspaceMidLeft><img src=""/></WorkspaceMidLeft>
-                <WorkspaceMidRight>Client contract</WorkspaceMidRight>
+                <WorkspaceMidLeft><img src={props.Workspace.icon}/></WorkspaceMidLeft>
+                <WorkspaceMidRight>{props.Workspace.title}</WorkspaceMidRight>
 
             </WorkspaceMiddleSection>
 
@@ -96,12 +100,12 @@ const WorkspaceBox = () => {
 
                 <WorkspaceBottomTop>
 
-                    <WorkspaceBottomLeft><img src="/icons/people.svg" /> Contract</WorkspaceBottomLeft>•
-                    <WorkspaceBottomRight><img src="/icons/people.svg" /> 150 users</WorkspaceBottomRight>
+                    <WorkspaceBottomLeft><img src="/icons/people.svg" />{props.Workspace.type}</WorkspaceBottomLeft>•
+                    <WorkspaceBottomRight><img src="/icons/people.svg" /> {props.Workspace.userNumber} users</WorkspaceBottomRight>
 
                 </WorkspaceBottomTop>
 
-                <WorkspaceBottomUpdate>Last update 2 ago</WorkspaceBottomUpdate>
+                <WorkspaceBottomUpdate>Last update {props.Workspace.update}</WorkspaceBottomUpdate>
 
             </WorkspaceBottomSection>
 

@@ -5,6 +5,8 @@ import WorkspaceBox from "./WorkspaceBox";
 import { useSelector } from "react-redux";
 import { IWorkspace } from "../../../../entities/IWorkspace";
 import { Link } from "react-router-dom";
+import { useWorkspaces } from "../../../../features/useWorskapces";
+import { useEffect, useState } from "react";
 
 const ItemsContainer = styled.div`
     display: flex;
@@ -21,19 +23,16 @@ const WorkspaceLink = styled(Link)`
     text-decoration: none;
 `;
 
-function Workspaces() {
+const Workspaces = () => {
 
-    // let items = useSelector(state.workspaces);
-    // if (items == null) {
-    //     items = [];
-    // }
+    const [items, setItems] = useState<IWorkspace[]>([]);
 
-    // const itemsCount = items.length;
+    const workspaces = useWorkspaces();
 
-    // if (itemsCount === 0) {
-    //     return null;
-    // }
-
+    useEffect(() =>{
+        workspaces.then(data=>{setItems(data)})
+        console.log("dsa");
+    },[workspaces])
     return (
         <ItemsContainer>
             <CustomCarousel itemWidth={350} offset={16} plugins={[{
@@ -42,11 +41,16 @@ function Workspaces() {
                     numberOfSlides: 5,
                 }
             }]}>
-                <WorkspaceBox/>
-                <WorkspaceBox/>
-                <WorkspaceBox/>
-                <WorkspaceBox/>
-                <WorkspaceBox/>
+                {/* <WorkspaceBox Workspace={}/>
+                {
+                   items.map((item: IWorkspace, index) => (
+                       <WorkspaceLink key={index} to={`/workspace/${item.id}`}>
+                           <WorkspaceItem workspace={item} />
+                       </WorkspaceLink>
+                   ))
+                } */}
+                <div></div>
+
             </CustomCarousel>
         </ItemsContainer>
     );
@@ -54,10 +58,3 @@ function Workspaces() {
 
 export default Workspaces;
 
-// {
-//    items.map((item: IWorkspace, index) => (
-//        <WorkspaceLink key={index} to={`/workspace/${item.id}`}>
-//            <WorkspaceItem workspace={item} />
-//        </WorkspaceLink>
-//    ))
-// }

@@ -27,6 +27,20 @@ const CommentBottom = styled.div`
     height:25%;
     color: ${Colors.owngray};
     padding: 5px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+`;
+
+const CommentCorp = styled.div`
+    margin-right: 20px;
+`;
+
+const CommentType = styled.div`
+    margin-right: 20px;
+`;
+
+const CommentUpdate = styled.div`
+    margin-right: 20px;
 `;
 
 export interface IPost {
@@ -46,7 +60,21 @@ const ResumeComments = () => {
 
             </CommentBody>
 
-            <CommentBottom>Bottom</CommentBottom>
+            <CommentBottom>Bottom
+
+                <CommentCorp>
+                    Subsid. corp.
+                </CommentCorp>
+
+                <CommentType>
+                    Client contract
+                </CommentType>
+
+                <CommentUpdate>
+                    Updated 3 days ago by John Doe
+                </CommentUpdate>
+
+            </CommentBottom>
 
         </Container>
     )  
