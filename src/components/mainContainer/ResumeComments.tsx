@@ -6,7 +6,6 @@ const Container = styled.div`
     background-color: white;
     width: 100%;
     height: 150px;
-    font-size: 20px;
     box-shadow: 10px 10px 10px #ECECEC;
 `;
 
@@ -21,6 +20,7 @@ const CommentBody = styled.div`
     height:50%;
     color: ${Colors.owngray};
     padding: 0px 10px;
+    font-size: 17px;
 `;
 
 const CommentBottom = styled.div`
@@ -40,9 +40,11 @@ const ResumeComments = () => {
     return(
         <Container>
 
-            <CommentTitle>Title ##</CommentTitle>
+            <CommentTitle>World company SAS</CommentTitle>
 
-            <CommentBody>Body</CommentBody>
+            <CommentBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in suscipit velit, quis fermentum dui. Aenean vulputate ullamcorper ipsum, a eleifend libero consequat sed. Vivamus mauris orci, sagittis sit amet consectetur pellentesque, congue id enim. Sed consequat neque ac dui gravida facilisis.  
+
+            </CommentBody>
 
             <CommentBottom>Bottom</CommentBottom>
 

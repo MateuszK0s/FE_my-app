@@ -78,7 +78,7 @@ const WorkspaceBottomUpdate = styled.div`
     padding-left: 15px;
 `;
 
-function WorkspaceBox(props: IWorkspace){
+const WorkspaceBox = () => {
     return (
         <Container>
 
@@ -87,8 +87,8 @@ function WorkspaceBox(props: IWorkspace){
 
             <WorkspaceMiddleSection>
 
-                <WorkspaceMidLeft><img src={props.icon}/></WorkspaceMidLeft>
-                <WorkspaceMidRight>{props.title}</WorkspaceMidRight>
+                <WorkspaceMidLeft><img src=""/></WorkspaceMidLeft>
+                <WorkspaceMidRight>Client contract</WorkspaceMidRight>
 
             </WorkspaceMiddleSection>
 
@@ -96,12 +96,12 @@ function WorkspaceBox(props: IWorkspace){
 
                 <WorkspaceBottomTop>
 
-                    <WorkspaceBottomLeft><img src="/icons/people.svg" /> {props.type}</WorkspaceBottomLeft>•
-                    <WorkspaceBottomRight><img src="/icons/people.svg" /> {props.userNumber} users</WorkspaceBottomRight>
+                    <WorkspaceBottomLeft><img src="/icons/people.svg" /> Contract</WorkspaceBottomLeft>•
+                    <WorkspaceBottomRight><img src="/icons/people.svg" /> 150 users</WorkspaceBottomRight>
 
                 </WorkspaceBottomTop>
 
-                <WorkspaceBottomUpdate>Last update {props.update} ago</WorkspaceBottomUpdate>
+                <WorkspaceBottomUpdate>Last update 2 ago</WorkspaceBottomUpdate>
 
             </WorkspaceBottomSection>
 

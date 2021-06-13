@@ -81,13 +81,19 @@ const YourSectionName = styled.div`
 `;
 
 const YourSectionButton = styled.div`
-    height: 95%;
+    height: 50%;
     float: left;
-    width: 18%;
+    width: 14%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5%;
+    border: 2px solid ${Colors.owngray};
+    border-radius: 13%;
+    img{
+        height: 72%;
+    }
+    margin: 13px 0;
 `;
 
 const NetworkSection = styled.div`
@@ -142,7 +148,7 @@ const ProfileBar = () => {
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/user-plus.svg" height="30%"/>
+                        <img src="/icons/user-plus.svg"/>
                     </YourSectionButton>
 
                 </NetworkSection>
@@ -158,7 +164,7 @@ const ProfileBar = () => {
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/plus.png" height="30%"/>
+                        <img src="/icons/plus.svg"/>
                     </YourSectionButton>
 
                 </PublicationsSection>
