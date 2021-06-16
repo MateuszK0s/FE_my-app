@@ -108,11 +108,6 @@ const PublicationsSection = styled.div`
     background-color: white;   
 `;
 
-const CustomLink = styled(Link)`
-    text-decoration: none;
-    color: ${Colors.owngray};
-`;
-
 const ProfileBar = () => {
     return(
         <Container>
@@ -121,7 +116,7 @@ const ProfileBar = () => {
 
                 <PictureSection>
                     <ProfilePicture>
-                        <img src="/icons/dembele.png" height="90px"/>
+                        <img src="/icons/dembele.png" alt="" height="90px"/>
                     </ProfilePicture>
                 </PictureSection>
                 
@@ -140,7 +135,7 @@ const ProfileBar = () => {
                 <NetworkSection>
 
                     <YourSectionIcon>
-                        <img src="/icons/network.png" height="50%"/>
+                        <img src="/icons/network.png" alt="" height="50%"/>
                     </YourSectionIcon>
 
                     <YourSectionName>
@@ -148,7 +143,7 @@ const ProfileBar = () => {
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/user-plus.svg"/>
+                        <img src="/icons/user-plus.svg" alt=""/>
                     </YourSectionButton>
 
                 </NetworkSection>
@@ -156,7 +151,7 @@ const ProfileBar = () => {
                 <PublicationsSection>
 
                     <YourSectionIcon>
-                        <img src="/icons/publications.svg" height="50%"/>
+                        <img src="/icons/publications.svg" height="50%" alt=""/>
                     </YourSectionIcon>
 
                     <YourSectionName>
@@ -164,7 +159,7 @@ const ProfileBar = () => {
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/plus.svg"/>
+                        <img src="/icons/plus.svg" alt=""/>
                     </YourSectionButton>
 
                 </PublicationsSection>

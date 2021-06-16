@@ -51,7 +51,7 @@ const searchSection: FC = () => {
 
                     <CustomInput type="text" fullWidth variant="outlined" placeholder="Search Legalcluster"/>
 
-                    <SearchIcon><img src="/icons/search.svg" width="22" height="22" /></SearchIcon>
+                    <SearchIcon><img src="/icons/search.svg" width="22" height="22" alt="" /></SearchIcon>
 
                 </InputContainer>
 

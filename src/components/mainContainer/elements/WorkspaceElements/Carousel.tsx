@@ -2,11 +2,8 @@ import styled from "styled-components";
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import WorkspaceBox from "./WorkspaceBox";
-import { useSelector } from "react-redux";
-import { IWorkspace } from "../../../../entities/IWorkspace";
 import { Link } from "react-router-dom";
 import { useWorkspaces } from "../../../../features/useWorskapces";
-import { useEffect, useState } from "react";
 
 const ItemsContainer = styled.div`
     display: flex;

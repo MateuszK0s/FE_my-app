@@ -44,17 +44,17 @@ const SideMenu = () => {
         <Container>
 
         <CustomLink to="/publications"><ItemBar>
-                <ItemIcon><img src="/icons/publications.svg"/></ItemIcon>
+                <ItemIcon><img src="/icons/publications.svg" alt=""/></ItemIcon>
                 <ItemName>Publications</ItemName>
             </ItemBar></CustomLink>
 
             <CustomLink to="/ecosystem"><ItemBar>
-                <ItemIcon><img src="/icons/ecosystem.svg"/></ItemIcon>
+                <ItemIcon><img src="/icons/ecosystem.svg" alt=""/></ItemIcon>
                 <ItemName>Ecosystem</ItemName>
             </ItemBar></CustomLink>
 
             <CustomLink to="/entities"><ItemBar>
-                <ItemIcon><img src="/icons/entities.svg"/></ItemIcon>
+                <ItemIcon><img src="/icons/entities.svg" alt=""/></ItemIcon>
                 <ItemName>Entities</ItemName>
             </ItemBar></CustomLink>
 

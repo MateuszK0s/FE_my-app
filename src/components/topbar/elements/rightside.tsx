@@ -51,11 +51,11 @@ const CornerImg = styled.div`
 const homeMenu : FC = () =>{
     return(
         <NotificationBar>
-            <NotificationHome><CustomLink to="/"><img src="/icons/house.svg" height="32"/></CustomLink></NotificationHome>
-            <NotificationIcon><img src="/icons/comments.svg" height="30"/>
+            <NotificationHome><CustomLink to="/"><img src="/icons/house.svg" alt="" height="32"/></CustomLink></NotificationHome>
+            <NotificationIcon><img src="/icons/comments.svg" height="30" alt=""/>
                 <CornerImg>3</CornerImg>
             </NotificationIcon>
-            <NotificationIcon><img src="/icons/bell.svg" height="30"/>
+            <NotificationIcon><img src="/icons/bell.svg" height="30" alt=""/>
                 <CornerImg>3</CornerImg>
             </NotificationIcon>
         </NotificationBar>

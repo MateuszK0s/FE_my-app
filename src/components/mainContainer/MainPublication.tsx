@@ -10,6 +10,7 @@ const Container = styled.div`
     box-shadow: 10px 10px 10px #ECECEC;
     height: 480px;
     width: 100%;
+    margin-right: 60px;
 `;
 
 const LeftSide = styled.div`

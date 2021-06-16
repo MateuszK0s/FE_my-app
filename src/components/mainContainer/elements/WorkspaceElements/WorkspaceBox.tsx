@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { IWorkspace } from '../../../../entities/IWorkspace';
 import { Colors } from '../../../../styledHelpers/Colors';
@@ -8,7 +9,7 @@ const Container = styled.div`
     width: 350px;
     height: 100%;
     min-height: 300px;
-    box-shadow: 10px 10px 10px #ECECEC;
+    box-shadow: 7px 7px 7px #ECECEC;
 `;
 
 const WorkspaceTopImg = styled.div`
@@ -96,6 +97,11 @@ interface IWorkspaceBox{
     Workspace: IWorkspace;
 }
 
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.ownblue};
+`;
+
 function WorkspaceBox(props: IWorkspaceBox) {
     return (
         <Container>
@@ -107,7 +113,7 @@ function WorkspaceBox(props: IWorkspaceBox) {
             <WorkspaceMiddleSection>
 
                 <WorkspaceMidLeft><img src={props.Workspace.icon}/></WorkspaceMidLeft>
-                <WorkspaceMidRight>{props.Workspace.title}</WorkspaceMidRight>
+                <WorkspaceMidRight><CustomLink to="/workspaces">{props.Workspace.title}</CustomLink></WorkspaceMidRight>
 
             </WorkspaceMiddleSection>
 

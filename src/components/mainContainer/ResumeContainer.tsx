@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import ResumeComments from './ResumeComments';
+import IComments from '../../entities/IComments';
+import useComments from '../../features/hooks/useComments';
+import useUsers from '../../features/hooks/useUsers';
+import ResumeComments from './elements/ResumeElements/ResumeComments';
 
 const Container = styled.div`
     height: 500px;
@@ -38,16 +41,31 @@ export interface IPost {
     userId: number;
 }
 
+
 const ResumeContainer = () => {
+
+    const comms = useComments();
+    const usrs = useUsers();
+    // console.log(comms);
+
+    // const itemsToShow: JSX.Element[] = [];
+    
+    // comms.forEach(comment => {
+    //     itemsToShow.push(<ResumeComments comment={comment} user={null}/>)
+    // });
+
     return(
         <Container>
 
                 <ResumeTopBar>Resume your work</ResumeTopBar>
 
                 <ResumeBottom>
-
-                    <ResumeComments/>
-                    
+                    {/* {
+                        comms.map((comments => <ResumeComments comment={comments}/>))                        
+                    }                                  
+                    {
+                        usrs.map((users => <ResumeComments user={users}/>))
+                    } */}
                 </ResumeBottom>
 
         </Container>

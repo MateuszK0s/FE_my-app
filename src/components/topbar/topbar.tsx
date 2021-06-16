@@ -71,17 +71,17 @@ const TopBar = () => {
     return (
         <Container>
             <NavBar>
-                <MainLogo><CustomLink to="/"><img src="/icons/atom.png" height="46"/></CustomLink></MainLogo>                      
+                <MainLogo><CustomLink to="/"><img src="/icons/atom.png" alt="" height="46"/></CustomLink></MainLogo>                      
                 <MenuWrapper ref={wrapperRef}>
 
                         <LeftSide onClick={menuHandler}>
 
-                            <img src="icons/house2.svg" height="30px"/>
+                            <img src="icons/house2.svg" alt="" height="30px"/>
 
                             <TempBox>
                                 <span> Home </span>
                                 
-                                <img src="icons/arrow-down.svg" height="9px"/>                        
+                                <img src="icons/arrow-down.svg" alt="" height="9px"/>                        
                             </TempBox> 
 
                        </LeftSide>

@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { Colors } from '../../styledHelpers/Colors';
+import IComments from '../../../../entities/IComments';
+import IUser from '../../../../entities/IUser';
+import { Colors } from '../../../../styledHelpers/Colors';
+
 
 const Container = styled.div`
     border-radius: 1.5%;
@@ -43,27 +46,23 @@ const CommentUpdate = styled.div`
     margin-right: 20px;
 `;
 
-export interface IPost {
-    id: number;
-    title: string;
-    body: string;
-    userId: number;
+interface Props{
+    comment?: IComments;
+    user?: IUser | null;
 }
 
-const ResumeComments = () => {
+function ResumeComments(props: Props ) {
     return(
         <Container>
 
-            <CommentTitle>World company SAS</CommentTitle>
+            <CommentTitle>{props.comment?.name}</CommentTitle>
 
-            <CommentBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in suscipit velit, quis fermentum dui. Aenean vulputate ullamcorper ipsum, a eleifend libero consequat sed. Vivamus mauris orci, sagittis sit amet consectetur pellentesque, congue id enim. Sed consequat neque ac dui gravida facilisis.  
+            <CommentBody>{props.comment?.body}</CommentBody>
 
-            </CommentBody>
-
-            <CommentBottom>Bottom
+            <CommentBottom>
 
                 <CommentCorp>
-                    Subsid. corp.
+                   zdj  {props.user?.name}
                 </CommentCorp>
 
                 <CommentType>
@@ -71,13 +70,13 @@ const ResumeComments = () => {
                 </CommentType>
 
                 <CommentUpdate>
-                    Updated 3 days ago by John Doe
+                    Updated 3 days ago by {props.user?.name}
                 </CommentUpdate>
 
             </CommentBottom>
 
         </Container>
-    )  
+    );
 }
 
 export default ResumeComments;

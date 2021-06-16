@@ -6,7 +6,7 @@ export default interface IUser extends EntityBase{
     name: string
     username: string
     email: string
-    addresses : IAddress
+    addresses: IAddress
     phone: string
     website: string
     company: ICompany
