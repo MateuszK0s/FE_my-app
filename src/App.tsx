@@ -11,6 +11,7 @@ import { setPhotos } from './features/photosSlice';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainContainer from './components/mainContainer/MainContainer';
 import WorkspacesContainer from './components/mainContainer/WorkspacesContainer';
+import EntitiesContainer from './components/mainContainer/EntitiesContainer';
 
 const Container = styled.div`
   display: flex;
@@ -61,12 +62,8 @@ function App() {
             <Route exact path="/" component={MainContainer}/>            
 
             <Route path="/workspaces" component={WorkspacesContainer}/>            
-            {/* <Route path="/workspaces" >
-              <MainWorkspaces />
-            </Route>
-            <Route path="/" exact>
-              <MainContainer />
-            </Route> */}
+
+            <Route path="/entities" component={EntitiesContainer}/>
 
           </Switch>
         </Container>

@@ -6,6 +6,8 @@ import useComments from '../../features/hooks/useComments';
 import useUsers from '../../features/hooks/useUsers';
 import ResumeComments from './elements/ResumeElements/ResumeComments';
 import Pagination from '@material-ui/lab/Pagination';
+import { TextField } from '@material-ui/core';
+import ResumeFollowed from './elements/ResumeElements/ResumeFollowed';
 
 
 const Container = styled.div`
@@ -26,16 +28,17 @@ const ResumeTopBar = styled.div`
     color: #4b5268;
 `;
 
+const CustomInput = styled(TextField)`
+    div{
+        height: 40px;       
+        align-items: center;        
+    }   
+    margin-right: 10px;
+`;
+
 const ResumeBottom = styled.div`
     width: 100%;
     height: 100%;
-`;
-
-const Comments = styled.div`
-    border-radius: 1.5%;
-    background-color: white;
-    width: 100%;
-    height: calc(100% - 76px);
 `;
 
 const CustomPagination = styled(Pagination)`
@@ -52,27 +55,23 @@ export interface IPost {
     userId: number;
 }
 
-
+const FilterBox = styled.div`
+    margin-left: 50%;
+    display: flex;
+`;
 
 const ResumeContainer = () => {
 
     const comments = useComments();
     const users = useUsers();
 
-    console.log(comments.length);
-
-    const [commentsItems, setCommentsItems] = useState(comments);
-
     const [pageNumber, setPageNumber] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(20);
+    const [postsPerPage] = useState(20);
     const pageCounter = 500 / postsPerPage;
-
 
     const indexOfLastPost = pageNumber * postsPerPage;
     const indexofFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = Object.values(comments).slice(indexofFirstPost, indexOfLastPost);
-
-    const paginate = (test : number) => setPageNumber(test)
 
     const getUser = (id: number): IUser => {
         return Object.values(users).filter(_user => _user.id == id)[0];
@@ -81,12 +80,19 @@ const ResumeContainer = () => {
     const handlePagination = (event: any, currentPage: number) => {
         setPageNumber(currentPage);
     }
-
     
     return (
         <Container>
 
-            <ResumeTopBar>Resume your work</ResumeTopBar>
+            <ResumeTopBar>
+                Resume your work
+                <FilterBox>
+                <CustomInput type="text" variant="outlined" placeholder="Filter by title..." />
+                <ResumeFollowed/>
+
+                </FilterBox>
+                
+            </ResumeTopBar>
 
             <div>
                 <ResumeBottom>
@@ -101,7 +107,5 @@ const ResumeContainer = () => {
         </Container>
     )
 }
-
-
 
 export default connect(state => state, {})(ResumeContainer);
