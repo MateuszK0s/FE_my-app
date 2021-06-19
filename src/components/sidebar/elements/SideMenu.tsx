@@ -13,6 +13,9 @@ const Container = styled.div`
 const ItemBar = styled.div`
     display: flex;
     height: 30%;
+    :hover{
+        background-color: #ECECEC;
+    }
 `;
 
 const ItemIcon = styled.div`

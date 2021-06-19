@@ -4,7 +4,7 @@ import IUser from "../../entities/IUser";
 function useUsers(): [IUser] {
     const state = useStore().getState();
 
-    return state.users;
+    return state.users.entities;
 }
 
 export default useUsers;

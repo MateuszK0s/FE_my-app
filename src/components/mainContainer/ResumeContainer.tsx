@@ -1,8 +1,12 @@
+import { useState } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import IComments from '../../entities/IComments';
+import IUser from '../../entities/IUser';
 import useComments from '../../features/hooks/useComments';
 import useUsers from '../../features/hooks/useUsers';
 import ResumeComments from './elements/ResumeElements/ResumeComments';
+import Pagination from '@material-ui/lab/Pagination';
+
 
 const Container = styled.div`
     height: 500px;
@@ -34,6 +38,13 @@ const Comments = styled.div`
     height: calc(100% - 76px);
 `;
 
+const CustomPagination = styled(Pagination)`
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    margin-bottom: -80px;
+`;
+
 export interface IPost {
     id: number;
     title: string;
@@ -42,34 +53,55 @@ export interface IPost {
 }
 
 
+
 const ResumeContainer = () => {
 
-    const comms = useComments();
-    const usrs = useUsers();
-    // console.log(comms);
+    const comments = useComments();
+    const users = useUsers();
 
-    // const itemsToShow: JSX.Element[] = [];
+    console.log(comments.length);
+
+    const [commentsItems, setCommentsItems] = useState(comments);
+
+    const [pageNumber, setPageNumber] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(20);
+    const pageCounter = 500 / postsPerPage;
+
+
+    const indexOfLastPost = pageNumber * postsPerPage;
+    const indexofFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = Object.values(comments).slice(indexofFirstPost, indexOfLastPost);
+
+    const paginate = (test : number) => setPageNumber(test)
+
+    const getUser = (id: number): IUser => {
+        return Object.values(users).filter(_user => _user.id == id)[0];
+    }
+
+    const handlePagination = (event: any, currentPage: number) => {
+        setPageNumber(currentPage);
+    }
+
     
-    // comms.forEach(comment => {
-    //     itemsToShow.push(<ResumeComments comment={comment} user={null}/>)
-    // });
-
-    return(
+    return (
         <Container>
 
-                <ResumeTopBar>Resume your work</ResumeTopBar>
+            <ResumeTopBar>Resume your work</ResumeTopBar>
 
+            <div>
                 <ResumeBottom>
-                    {/* {
-                        comms.map((comments => <ResumeComments comment={comments}/>))                        
-                    }                                  
-                    {
-                        usrs.map((users => <ResumeComments user={users}/>))
-                    } */}
+                    {Object.values(currentPosts).map((_comment, idx) =>
+                        <ResumeComments key={idx} user={getUser(_comment.postId)} comment={_comment} />
+                    )}
                 </ResumeBottom>
 
+                <CustomPagination count={pageCounter} shape="rounded" onChange={handlePagination} />
+            </div>
+
         </Container>
-    )  
+    )
 }
 
-export default ResumeContainer;
+
+
+export default connect(state => state, {})(ResumeContainer);

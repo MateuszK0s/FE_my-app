@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BottomWorkspace from './elements/WorkspaceElements/BottomWorkspace';
 import MainWorkspace from './elements/WorkspaceElements/MainWorkspace';
 import MiddleWorkspace from './elements/WorkspaceElements/MiddleWorkspace';
 
@@ -17,6 +18,8 @@ const WorkspacesContainer = () => {
             <MainWorkspace/>
 
             <MiddleWorkspace/>
+
+            <BottomWorkspace/>
 
         </Container>
     )  

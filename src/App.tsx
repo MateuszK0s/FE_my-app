@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './index.css';
 import TopBar from './components/topbar/topbar'
 import SideBar from './components/sidebar/SideBar'
@@ -20,28 +20,31 @@ const Container = styled.div`
 function App() {
 
   const dispatch = useDispatch();
+  const [ready, setReady] = useState<boolean>(false);
 
   useEffect(() => {
     const initApp = async () => {
-      fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
+
+      Promise.all([
+        fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
         .then(data => {
           dispatch(setUsers(data))
-        });
-
-      fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
+        }),
+        fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
         .then(data => {
           dispatch(setPosts(data))
-        });
-
-      fetch("https://jsonplaceholder.typicode.com/comments").then(response => response.json())
+        }),
+        fetch("https://jsonplaceholder.typicode.com/comments").then(response => response.json())
         .then(data => {
           dispatch(setComments(data))
-        });
-
-      fetch("https://jsonplaceholder.typicode.com/photos").then(response => response.json())
+        }),
+        fetch("https://jsonplaceholder.typicode.com/photos").then(response => response.json())
         .then(data => {
           dispatch(setPhotos(data))
-        });
+        })
+      ]).then(() => {
+        setReady(true);
+      })
     }
     initApp();
   }, [])
@@ -50,7 +53,7 @@ function App() {
   return (
 
     <div className="App">
-      <Router>
+      {ready && <Router>
         <TopBar />
         <Container>
           <SideBar />
@@ -67,7 +70,7 @@ function App() {
 
           </Switch>
         </Container>
-      </Router>
+      </Router>}
     </div>
   );
 }

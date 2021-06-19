@@ -53,6 +53,11 @@ const Title = styled.div`
     font-weight: 700;
     display: flex;
     align-items: center;
+    img{
+        position: absolute;
+        margin-left: 1225px;
+        height: 2.5%;
+    }
 `;
 
 const Description = styled.div`
@@ -72,7 +77,10 @@ const MainWorkspace = () => {
                         <img src="/icons/entities2.svg"/>
                     </BottomLeft>
                     <BottomRight>
-                        <Title>Corporate holdings</Title>
+                        <Title>
+                            Corporate holdings
+                            <img src="/icons/cog.svg"/>
+                        </Title>
                         <Description>Workspace purpose and a bit of context. This much needed description is here to remind people where they are, if they are new or have poor memory. Workspace purpose and a bit of context. This much needed description is here to remind people where they are, if they are new or have poor memory. Workspace purpose and a bit of context. This much needed description is here to remind people where they are, if they are new or have poor memory.</Description>
                     </BottomRight>
                 </BottomBox>
