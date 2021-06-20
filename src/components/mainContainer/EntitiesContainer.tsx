@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import DynamicLayout from '../layout/DynamicLayout';
 import EntitiesBoxMosaic from './elements/EntitiesElements/EntitiesBoxMosaic';
 import EntitiesBoxRow from './elements/EntitiesElements/EntitiesBoxRow';
 import FirstTopBar from './elements/EntitiesElements/FirstTopBar';
@@ -27,18 +28,20 @@ const EntitiesContainer = () => {
         setType(type);
     }
 
-
     return (
-        <Container>
+        <DynamicLayout>
+            <Container>
 
-            <FirstTopBar changeView={handleView} />
+                <FirstTopBar changeView={handleView} />
 
-            <SecondTopBar />
-            {
-                type == 1 ? <EntitiesBoxMosaic /> : <EntitiesBoxRow />
-            }
+                <SecondTopBar />
 
-        </Container>
+                {
+                    type == 1 ? <EntitiesBoxMosaic /> : <EntitiesBoxRow />
+                }
+
+            </Container>
+        </DynamicLayout>
     )
 }
 

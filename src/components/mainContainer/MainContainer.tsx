@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MainLayout from '../layout/MainLayout';
 import MainPublication from './MainPublication'
 
 const Container = styled.div`
@@ -10,13 +11,13 @@ const Container = styled.div`
 `;
 
 const MainContainer = () => {
-    return(
-        <Container>
-
-            <MainPublication/>
-
-        </Container>
-    )  
+    return (
+        <MainLayout>
+            <Container>
+                <MainPublication />
+            </Container>
+        </MainLayout>
+    )
 }
 
 export default MainContainer;

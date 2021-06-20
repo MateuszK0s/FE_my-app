@@ -80,18 +80,17 @@ const ResumeContainer = () => {
     const handlePagination = (event: any, currentPage: number) => {
         setPageNumber(currentPage);
     }
-    
+
     return (
         <Container>
 
             <ResumeTopBar>
                 Resume your work
                 <FilterBox>
-                <CustomInput type="text" variant="outlined" placeholder="Filter by title..." />
-                <ResumeFollowed/>
-
+                    <CustomInput type="text" variant="outlined" placeholder="Filter by title..." />
+                    <ResumeFollowed />
                 </FilterBox>
-                
+
             </ResumeTopBar>
 
             <div>

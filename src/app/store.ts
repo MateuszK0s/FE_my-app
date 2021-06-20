@@ -4,7 +4,7 @@ import usersReducer, { userAdapter } from '../features/usersSlice';
 import postsReducer, { postsAdapter } from '../features/postsSlice';
 import commentsReducer, { commentsAdapter } from '../features/commentsSlice'
 import photosReducer, { photosAdapter } from '../features/photosSlice'
-// import authReducer from '../features/authSlice'
+import layoutReducer from '../features/layoutSlice'
 
 const store = configureStore({
     reducer: {
@@ -12,7 +12,7 @@ const store = configureStore({
         posts: postsReducer,
         comments: commentsReducer,
         photos: photosReducer,
-        // auth: authReducer
+        layers: layoutReducer
     },
 })
 

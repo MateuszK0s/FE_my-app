@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MainLayout from '../layout/MainLayout';
 import BottomWorkspace from './elements/WorkspaceElements/BottomWorkspace';
 import MainWorkspace from './elements/WorkspaceElements/MainWorkspace';
 import MiddleWorkspace from './elements/WorkspaceElements/MiddleWorkspace';
@@ -12,17 +13,19 @@ const Container = styled.div`
 `;
 
 const WorkspacesContainer = () => {
-    return(
-        <Container>
+    return (
+        <MainLayout>
+            <Container>
 
-            <MainWorkspace/>
+                <MainWorkspace />
 
-            <MiddleWorkspace/>
+                <MiddleWorkspace />
 
-            <BottomWorkspace/>
+                <BottomWorkspace />
 
-        </Container>
-    )  
+            </Container>
+        </MainLayout>
+    )
 }
 
 export default WorkspacesContainer;

@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
 import './index.css';
-import TopBar from './components/topbar/topbar'
-import SideBar from './components/sidebar/SideBar'
-import styled from 'styled-components';
 import { setUsers } from './features/usersSlice';
 import { useDispatch } from 'react-redux';
 import { setPosts } from './features/postsSlice';
@@ -12,11 +9,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainContainer from './components/mainContainer/MainContainer';
 import WorkspacesContainer from './components/mainContainer/WorkspacesContainer';
 import EntitiesContainer from './components/mainContainer/EntitiesContainer';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
 
 function App() {
 
@@ -28,25 +20,25 @@ function App() {
 
       Promise.all([
         fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
-        .then(data => {
-          dispatch(setUsers(data))
-        }),
+          .then(data => {
+            dispatch(setUsers(data))
+          }),
         fetch("https://jsonplaceholder.typicode.com/users/1").then(response => response.json())
-        .then(data => {
-          console.log(data)
-        }),
+          .then(data => {
+            console.log(data)
+          }),
         fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
-        .then(data => {
-          dispatch(setPosts(data))
-        }),
+          .then(data => {
+            dispatch(setPosts(data))
+          }),
         fetch("https://jsonplaceholder.typicode.com/comments").then(response => response.json())
-        .then(data => {
-          dispatch(setComments(data))
-        }),
+          .then(data => {
+            dispatch(setComments(data))
+          }),
         fetch("https://jsonplaceholder.typicode.com/photos").then(response => response.json())
-        .then(data => {
-          dispatch(setPhotos(data))
-        })
+          .then(data => {
+            dispatch(setPhotos(data))
+          })
       ]).then(() => {
         setReady(true);
       })
@@ -59,18 +51,11 @@ function App() {
 
     <div className="App">
       {ready && <Router>
-        <TopBar />
-        <Container>
-          <SideBar />
-          <Switch>
-            <Route exact path="/" component={MainContainer}/>            
-
-            <Route path="/workspaces" component={WorkspacesContainer}/>            
-
-            <Route path="/entities" component={EntitiesContainer}/>
-
-          </Switch>
-        </Container>
+        <Switch>
+          <Route exact path="/" component={MainContainer} />
+          <Route path="/workspaces" component={WorkspacesContainer} />
+          <Route path="/entities" component={EntitiesContainer} />
+        </Switch>
       </Router>}
     </div>
   );
