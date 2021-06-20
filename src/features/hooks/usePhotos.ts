@@ -4,7 +4,7 @@ import IPhotos from "../../entities/IPhotos";
 function usePhotos(): [IPhotos] {
     const state = useStore().getState();
 
-    return state.photos;
+    return state.photos.entities;
 }
 
 export default usePhotos;

@@ -14,7 +14,7 @@ const TopBar2 = styled.div`
 const Ico1 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -29,7 +29,7 @@ const Ico1 = styled.div`
 const Ico2 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -44,7 +44,7 @@ const Ico2 = styled.div`
 const Ico3 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -59,7 +59,7 @@ const Ico3 = styled.div`
 const Ico4 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -74,7 +74,7 @@ const Ico4 = styled.div`
 const Ico5 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 37px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -89,7 +89,7 @@ const Ico5 = styled.div`
 const Ico6 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{
@@ -104,7 +104,7 @@ const Ico6 = styled.div`
 const Ico7 = styled.div`
     display: inline-flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 20px;
     padding: 5px 9px;
     height: calc(100% - 10px);
     img{

@@ -7,9 +7,9 @@ import { Colors } from '../../../../styledHelpers/Colors';
 const Container = styled.div`
     border-radius: 1.5%;
     background-color: white;
+    box-shadow: 10px 10px 10px #ECECEC;
     width: 100%;
     height: 140px;
-    box-shadow: 10px 10px 10px #ECECEC;
     margin-top: 20px;
 `;
 

@@ -30,16 +30,6 @@ const TopBar1 = styled.div`
     padding-top: 20px;
 `;
 
-const TopBar2 = styled.div`
-    height: 76px;
-    width: calc(100% - 20px);
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    padding-top: 20px;
-    background-color: blue;
-`;
-
 const CustomInput = styled(TextField)`
     div{
         height: 40px;       

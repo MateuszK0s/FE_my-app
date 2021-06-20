@@ -31,6 +31,10 @@ function App() {
         .then(data => {
           dispatch(setUsers(data))
         }),
+        fetch("https://jsonplaceholder.typicode.com/users/1").then(response => response.json())
+        .then(data => {
+          console.log(data)
+        }),
         fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json())
         .then(data => {
           dispatch(setPosts(data))
