@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainContainer from './components/mainContainer/MainContainer';
 import WorkspacesContainer from './components/mainContainer/WorkspacesContainer';
 import EntitiesContainer from './components/mainContainer/EntitiesContainer';
+import ProfileContainer from './components/mainContainer/ProfileContainer';
+import TestSite from './components/mainContainer/TestSite';
 
 function App() {
 
@@ -55,6 +57,8 @@ function App() {
           <Route exact path="/" component={MainContainer} />
           <Route path="/workspaces" component={WorkspacesContainer} />
           <Route path="/entities" component={EntitiesContainer} />
+          <Route path="/profile" component={ProfileContainer} />
+          <Route path="/test" component={TestSite} />
         </Switch>
       </Router>}
     </div>

@@ -1,4 +1,5 @@
+import { Layout } from "./Layout";
+
 export default interface ILayout {
-    Default: boolean,
-    FullScreen: boolean
+    layoutMode: Layout;
 }

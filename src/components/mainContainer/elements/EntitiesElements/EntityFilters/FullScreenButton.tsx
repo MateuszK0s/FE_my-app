@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Layout } from "../../../../../entities/Layout";
+import useDefault from "../../../../../features/hooks/useDefault";
 
 const Container = styled.div`
     display: inline-flex;
@@ -16,14 +18,18 @@ const Container = styled.div`
     }
 `;
 
-const FullScreenButton = () => {
+interface IProps{
+    changeFullScreen: any;
+}
 
-    const handleFullScreen = () =>{
-        
-    }
+const FullScreenButton = (prop: IProps) => {
+
+    const [layoutCheck] = useDefault();
+    const layoutToSet = Layout.FULL_SCREEN;
+    // layoutCheck == Layout.FULL_SCREEN ? Layout.DEFAULT : Layout.FULL_SCREEN;
 
     return (
-        <Container onClick={() => handleFullScreen()}>
+        <Container onClick={() => prop.changeFullScreen(layoutToSet)}>
             <img src="/icons/fullscreen.svg" />
         </Container>
     )

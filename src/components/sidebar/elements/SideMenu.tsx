@@ -43,26 +43,26 @@ const CustomLink = styled(Link)`
 
 
 const SideMenu = () => {
-    return(
+    return (
         <Container>
 
-        <CustomLink to="/publications"><ItemBar>
-                <ItemIcon><img src="/icons/publications.svg" alt=""/></ItemIcon>
+            <CustomLink to="/test"><ItemBar>
+                <ItemIcon><img src="/icons/publications.svg" alt="" /></ItemIcon>
                 <ItemName>Publications</ItemName>
             </ItemBar></CustomLink>
 
-            <CustomLink to="/ecosystem"><ItemBar>
-                <ItemIcon><img src="/icons/ecosystem.svg" alt=""/></ItemIcon>
+            <CustomLink to="/test"><ItemBar>
+                <ItemIcon><img src="/icons/ecosystem.svg" alt="" /></ItemIcon>
                 <ItemName>Ecosystem</ItemName>
             </ItemBar></CustomLink>
 
             <CustomLink to="/entities"><ItemBar>
-                <ItemIcon><img src="/icons/entities.svg" alt=""/></ItemIcon>
+                <ItemIcon><img src="/icons/entities.svg" alt="" /></ItemIcon>
                 <ItemName>Entities</ItemName>
             </ItemBar></CustomLink>
 
         </Container>
-    )  
+    )
 }
 
 export default SideMenu;

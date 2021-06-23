@@ -5,9 +5,7 @@ interface IProps {
 const FullScreenLayout = ({ children }: IProps) => {
     return (
         <div>
-
             {children}
-
         </div>
     );
 }

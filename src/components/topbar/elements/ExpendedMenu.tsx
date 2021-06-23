@@ -139,7 +139,7 @@ const Scroll = styled.div`
 
 const CustomLink = styled(Link)`
     text-decoration: none;
-    color: ${Colors.owngray};
+    color: black;
 `;
 
 export const ExpandedMenu: FC = () => {
@@ -164,26 +164,36 @@ export const ExpandedMenu: FC = () => {
                             <CustomLink to="/">
                                 {'Home'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/house2.svg" alt=""></CustomImg>Home</li>}
                             </CustomLink>
-                            <CustomLink to="/publications">
+                            <CustomLink to="/test">
                                 {'Publications'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Publications</li>}
                             </CustomLink>
-                            <CustomLink to="/template">
+                            <CustomLink to="/test">
                                 {'People'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/people.png" alt=""></CustomImg>People</li>}
                             </CustomLink>
                             <CustomLink to="/entities">
                                 {'Entities'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities.png" alt=""></CustomImg>Entities</li>}
                             </CustomLink>
-                            <CustomLink to="/template">
+                            <CustomLink to="/test">
                                 {'Administration'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/administration.png" alt=""></CustomImg>Administration</li>}
                             </CustomLink>
                         </PlatformItem>
                         <span>Workspaces</span>
                         <WorkspacesItem>
-                            {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Client contract</li>}
-                            {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/cog.png" alt=""></CustomImg>Supplier contract</li>}
-                            {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Corporate</li>}
-                            {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/network.png" alt=""></CustomImg>Group Norms</li>}
-                            {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Real estate contracts</li>}
+                            <CustomLink to="/test">
+                                {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Client contract</li>}
+                            </CustomLink>
+                            <CustomLink to="/test">
+                                {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/cog.png" alt=""></CustomImg>Supplier contract</li>}
+                            </CustomLink>
+                            <CustomLink to="/test">
+                                {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/entities2.png" alt=""></CustomImg>Corporate</li>}
+                            </CustomLink>
+                            <CustomLink to="/test">
+                                {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/network.png" alt=""></CustomImg>Group Norms</li>}
+                            </CustomLink>
+                            <CustomLink to="/test">
+                                {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/publications.png" alt=""></CustomImg>Real estate contracts</li>}
+                            </CustomLink>
                         </WorkspacesItem>
 
                     </MenuList>
@@ -196,12 +206,18 @@ export const ExpandedMenu: FC = () => {
                                 <UserDiv><UserImg src="icons/dembele.png" /></UserDiv>
                                 <RightSite>
                                     <Name>Humberta Swift</Name>
-                                    {'See Profile'.toLowerCase().includes(inputText.toLowerCase()) && <Description>See Profile</Description>}
+                                    <CustomLink to="/profile">
+                                        {'See Profile'.toLowerCase().includes(inputText.toLowerCase()) && <Description>See Profile</Description>}
+                                    </CustomLink>
                                 </RightSite>
                             </NameBox>
                         </li>
-                        {'Privacy'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/privacy.png" alt=""></CustomImg>Privacy</li>}
-                        {'Settings'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/settings.png" alt=""></CustomImg>Settings</li>}
+                        <CustomLink to="/test">
+                            {'Privacy'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/privacy.png" alt=""></CustomImg>Privacy</li>}
+                        </CustomLink>
+                        <CustomLink to="/test">
+                            {'Settings'.toLowerCase().includes(inputText.toLowerCase()) && <li><CustomImg src="icons/settings.png" alt=""></CustomImg>Settings</li>}
+                        </CustomLink>
                     </AccountItem>
                 </UserList>
                 <LogOutButton>

@@ -12,7 +12,7 @@ const Container = styled.div`
     box-shadow: 10px 10px 10px #ECECEC;
 `;
 
-const ProfileSection= styled.div`
+const ProfileSection = styled.div`
     height: 64%;
     width: 100%;
 `;
@@ -108,66 +108,71 @@ const PublicationsSection = styled.div`
     background-color: white;   
 `;
 
+const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+`;
+
 const ProfileBar = () => {
-    return(
+    return (
         <Container>
 
             <ProfileSection>
 
                 <PictureSection>
                     <ProfilePicture>
-                        <img src="/icons/dembele.png" alt="" height="90px"/>
+                        <img src="/icons/dembele.png" alt="" height="90px" />
                     </ProfilePicture>
                 </PictureSection>
-                
-                <ProfileName>
+
+                <CustomLink to="/profile"><ProfileName>
                     Humberta Swift
-                </ProfileName>
+                </ProfileName></CustomLink>
 
                 <ProfileDescription>
                     Job title - Company
                 </ProfileDescription>
 
-            </ProfileSection>                
+            </ProfileSection>
 
             <YourSection>
 
                 <NetworkSection>
 
                     <YourSectionIcon>
-                        <img src="/icons/network.png" alt="" height="50%"/>
+                        <img src="/icons/network.png" alt="" height="50%" />
                     </YourSectionIcon>
 
                     <YourSectionName>
-                        Your network
+                        <CustomLink to="/test">Your network</CustomLink>
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/user-plus.svg" alt=""/>
+                        <img src="/icons/user-plus.svg" alt="" />
                     </YourSectionButton>
 
                 </NetworkSection>
-                    
+
                 <PublicationsSection>
 
                     <YourSectionIcon>
-                        <img src="/icons/publications.svg" height="50%" alt=""/>
+                        <img src="/icons/publications.svg" height="50%" alt="" />
                     </YourSectionIcon>
 
                     <YourSectionName>
-                        Your Publications
+                        <CustomLink to="/test">Your Publications</CustomLink>
                     </YourSectionName>
 
                     <YourSectionButton>
-                        <img src="/icons/plus.svg" alt=""/>
+                        <img src="/icons/plus.svg" alt="" />
                     </YourSectionButton>
 
                 </PublicationsSection>
 
             </YourSection>
-        
+
         </Container>
-    )  
+    )
 }
 
 export default ProfileBar;

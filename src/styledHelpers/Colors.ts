@@ -3,5 +3,6 @@ export const Colors = {
     black: '#000',
     owngray: '#4b5268',
     ownblue: '#5163af',
-    ownlgray: '#e0dcdc'
+    ownlgray: '#e0dcdc',
+    ownlblue: '#2596be'
 }

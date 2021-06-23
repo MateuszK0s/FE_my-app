@@ -1,6 +1,11 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { Layout } from "../../../../entities/Layout";
+import useDefault from "../../../../features/hooks/useDefault";
+import { changeLayout } from "../../../../features/layoutSlice";
 import { Colors } from "../../../../styledHelpers/Colors";
-import FullScreenButton from "./EntityFilters/FullScreen";
+import FullScreenButton from "./EntityFilters/FullScreenButton";
 
 const LeftSide = styled.div`
     width: 70%;
@@ -63,10 +68,18 @@ const Share = styled.div`
 
 const SecondBarLeftSide = () => {
 
+    const dispatch = useDispatch();
+
     const copyLink = () => {
         const currentHref = window.location.href;
         navigator.clipboard.writeText(currentHref);
-        
+    }
+
+    const [layout, setLayout] = useDefault();
+
+    const handleFullScreen = (type: Layout) => {
+        setLayout(type);
+        console.log(type);
     }
     
     return (
@@ -93,7 +106,7 @@ const SecondBarLeftSide = () => {
             </SideBorders>
 
             <SideBorders2>
-                <FullScreenButton/>                    
+                <FullScreenButton changeFullScreen={handleFullScreen}/>                  
             </SideBorders2>
 
             <Share onClick={copyLink}>

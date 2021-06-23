@@ -12,7 +12,7 @@ const store = configureStore({
         posts: postsReducer,
         comments: commentsReducer,
         photos: photosReducer,
-        layers: layoutReducer
+        layout: layoutReducer
     },
 })
 

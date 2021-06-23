@@ -48,7 +48,7 @@ const PublicationRightSide = () => {
 
             <PublicationBar/>
 
-            <BottomBar><CustomLink to="/publications">See more publications</CustomLink></BottomBar>
+            <BottomBar><CustomLink to="/test">See more publications</CustomLink></BottomBar>
 
         </Container>
     )

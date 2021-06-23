@@ -1,13 +1,14 @@
 import { useDispatch, useStore } from "react-redux";
-import { toggleDefault } from "../layoutSlice";
+import { Layout } from "../../entities/Layout";
+import { changeLayout } from "../layoutSlice";
 
-function useDefault(): [boolean, (toggle: boolean) => void] {
+function useDefault(): [Layout, (toggle: Layout) => void] {
     const dispatch = useDispatch();
 
-    const value = useStore().getState().layout.Default;
+    const value = useStore().getState().layout.layoutMode;
 
-    const toggle = (toggle: boolean) => {
-        dispatch(toggleDefault(toggle));
+    const toggle = (toggle: Layout) => {
+        dispatch(changeLayout(toggle));
     }
 
     return [value, toggle];
