@@ -1,10 +1,12 @@
 import { useState } from "react";
+import useDropdown from "react-dropdown-hook";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { Layout } from "../../../../entities/Layout";
 import useDefault from "../../../../features/hooks/useDefault";
 import { changeLayout } from "../../../../features/layoutSlice";
 import { Colors } from "../../../../styledHelpers/Colors";
+import FilterMenu from "./EntityFilters/FilterMenu";
 import FullScreenButton from "./EntityFilters/FullScreenButton";
 
 const LeftSide = styled.div`
@@ -36,6 +38,10 @@ const Ico1 = styled.div`
     height: calc(100% - 10px);
     background-color: white;
     font-weight: 700;
+    img{
+        min-height: 10px;
+        padding-left: 5px;
+    }
 `;
 
 const Ico2 = styled.div`
@@ -66,6 +72,9 @@ const Share = styled.div`
     }
 `;
 
+const MenuWrapper = styled.div`
+`;
+
 const SecondBarLeftSide = () => {
 
     const dispatch = useDispatch();
@@ -81,14 +90,23 @@ const SecondBarLeftSide = () => {
         setLayout(type);
         console.log(type);
     }
-    
+
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+    const menuHandler = () => {
+        toggleDropdown();
+    }
+
     return (
         <LeftSide>
 
-            <Ico1 background-color="red">
-                <img src="/icons/circle.svg" />
-                <span>All</span>
-            </Ico1>
+            <MenuWrapper ref={wrapperRef}>
+                <Ico1 onClick={menuHandler} >
+                    <img src="/icons/circle.svg" />
+                    <span>All</span>
+                    <img src="/icons/arrow-down.svg" />
+                </Ico1>
+                {dropdownOpen && <FilterMenu />}
+            </MenuWrapper>
 
             <Ico1 background-color="red">
                 · · ·
@@ -106,7 +124,7 @@ const SecondBarLeftSide = () => {
             </SideBorders>
 
             <SideBorders2>
-                <FullScreenButton changeFullScreen={handleFullScreen}/>                  
+                <FullScreenButton changeFullScreen={handleFullScreen} />
             </SideBorders2>
 
             <Share onClick={copyLink}>
