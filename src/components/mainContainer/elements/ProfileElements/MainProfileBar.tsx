@@ -101,7 +101,7 @@ const MainProfileBar = () => {
         <Container>
             <LeftSide>
                 <LeftTop>
-                    <img src="/icons/dembele.png" />
+                    <img src="/icons/indeks.jpg" />
                 </LeftTop>
 
                 <LeftBottom>

@@ -119,6 +119,9 @@ const Attachment2 = styled.div`
 
 const AttLeftSide = styled.div`
     font-weight: 600;
+    img{
+        border-radius: 50%;
+    }
 `;
 
 const AttRightSide = styled.div`
@@ -126,6 +129,18 @@ const AttRightSide = styled.div`
     img{
         margin-left: 50px;
     }
+`;
+
+const Input = styled.input`
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    width: 100%;
+    display: inherit;
+    margin: inherit;  
+    padding: inherit;   
+    font-weight: inherit;
 `;
 
 const ThirdProfileBar = () => {
@@ -140,7 +155,7 @@ const ThirdProfileBar = () => {
                     <span>Hourly fee</span>
                 </RowTitle>
                 <RowBottom>
-                    <BottomRowItem>610€/hour (Negociated)</BottomRowItem>
+                    <BottomRowItem><Input defaultValue="610€/hour (Negociated)" /></BottomRowItem>
                 </RowBottom>
             </RowBox>
 
@@ -149,10 +164,10 @@ const ThirdProfileBar = () => {
                     <span>Terms & conditions</span>
                 </RowTitle>
                 <AttachmentRow>
-                    <BottomRowItem2>Monthly 10k€ retainer - see with Jeanny Smith</BottomRowItem2>
+                    <BottomRowItem2><Input defaultValue="Monthly 10k€ retainer - see with Jeanny Smith" /></BottomRowItem2>
                     <Attachment>
                         <img src="icons/attachment.svg" />
-                        Attachment_lorem-ipsum25425.jpg
+                        <Input defaultValue="Attachment_lorem-ipsum25425.jpg" />
                     </Attachment>
                 </AttachmentRow>
             </RowBox>
@@ -162,7 +177,7 @@ const ThirdProfileBar = () => {
                     <span>Services & project</span>
                 </RowTitle2>
                 <RowBottom>
-                    <BottomRowItem2>Corporate M&A and international acquisitions</BottomRowItem2>
+                    <BottomRowItem2><Input defaultValue="Corporate M&A and international acquisitions" /></BottomRowItem2>
                 </RowBottom>
             </RowBox2>
 
@@ -173,7 +188,7 @@ const ThirdProfileBar = () => {
                 <AttachmentRow>
                     <Attachment2>
                         <AttLeftSide>
-                        <img src="icons/dembele.png" />
+                        <img src="icons/indeks.jpg" />
                         Firstname Lastname
                         </AttLeftSide>
                         <AttRightSide>
@@ -186,7 +201,7 @@ const ThirdProfileBar = () => {
 
                     <Attachment2>
                     <AttLeftSide>
-                        <img src="icons/dembele.png" />
+                        <img src="icons/indeks.jpg" />
                         Firstname Lastname
                         </AttLeftSide>
                         <AttRightSide>

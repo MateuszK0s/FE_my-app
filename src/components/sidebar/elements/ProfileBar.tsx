@@ -121,7 +121,7 @@ const ProfileBar = () => {
 
                 <PictureSection>
                     <ProfilePicture>
-                        <img src="/icons/dembele.png" alt="" height="90px" />
+                        <img src="/icons/indeks.jpg" alt="" height="90px" />
                     </ProfilePicture>
                 </PictureSection>
 

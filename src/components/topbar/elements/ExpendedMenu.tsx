@@ -203,7 +203,7 @@ export const ExpandedMenu: FC = () => {
                     <AccountItem>
                         <li>
                             <NameBox>
-                                <UserDiv><UserImg src="icons/dembele.png" /></UserDiv>
+                                <UserDiv><UserImg src="icons/indeks.jpg" /></UserDiv>
                                 <RightSite>
                                     <Name>Humberta Swift</Name>
                                     <CustomLink to="/profile">

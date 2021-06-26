@@ -46,6 +46,13 @@ const BottomRowItem = styled.div`
     border-radius: 7px;
 `;
 
+const Input = styled.input`
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+`;
+
 const SecondProfileBar = () => {
     return (
         <Container>
@@ -55,7 +62,7 @@ const SecondProfileBar = () => {
                     <img src="/icons/pen.svg" />
                 </RowTitle>
                 <RowBottom>
-                    <BottomRowItem>Mergers and acquisition</BottomRowItem>
+                    <BottomRowItem><Input defaultValue="Mergers and acquisition" /></BottomRowItem>
                 </RowBottom>
             </RowBox>
 
@@ -64,8 +71,8 @@ const SecondProfileBar = () => {
                     <span>Specialities</span>
                 </RowTitle>
                 <RowBottom>
-                    <BottomRowItem>Cross border operation</BottomRowItem>
-                    <BottomRowItem>Transaction over 500M€/$</BottomRowItem>
+                    <BottomRowItem><Input type="text" defaultValue="Cross border operation" /></BottomRowItem>
+                    <BottomRowItem><Input type="text" defaultValue="Transaction over 500M€/$" /></BottomRowItem>
                 </RowBottom>
             </RowBox>
 
@@ -74,8 +81,8 @@ const SecondProfileBar = () => {
                     <span>Admission to practice law</span>
                 </RowTitle>
                 <RowBottom>
-                    <BottomRowItem>Paris bar association</BottomRowItem>
-                    <BottomRowItem>Tunisian bar association</BottomRowItem>
+                    <BottomRowItem><Input type="text" defaultValue="Paris bar association" /></BottomRowItem>
+                    <BottomRowItem><Input type="text" defaultValue="Tunisian bar association" /></BottomRowItem>
                 </RowBottom>
             </RowBox>
 
@@ -84,7 +91,7 @@ const SecondProfileBar = () => {
                     <span>Counties</span>
                 </RowTitle>
                 <RowBottom>
-                    <BottomRowItem>Tunisia</BottomRowItem>
+                    <BottomRowItem><Input type="text" defaultValue="Tunisia" /></BottomRowItem>
                 </RowBottom>
             </RowBox>
         </Container>
